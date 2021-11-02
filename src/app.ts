@@ -27,9 +27,14 @@ app.use(
 );
 
 app.post("/mail", (req: Request, res: Response) => {
-  sendMail(req.body);
+  sendMail(req.body)
+    .then((ok) => {
+      res.send(true);
+    })
+    .catch((err) => {
+      res.send(false);
+    });
 
-  res.send("ok");
   res.end;
 });
 

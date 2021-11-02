@@ -34,6 +34,4 @@ export const sendMail = async (values: FormValues) => {
     text: "Bonjour, Votre message a bien été pris en compte, je vous répondrais le plus rapidement possible. Cordialement",
     html: "<b>Bonjour, Votre message a bien été pris en compte, je vous répondrais le plus rapidement possible. Cordialement</b>",
   });
-
-  console.log("Message sent: %s %s", mail.messageId, confirm.messageId);
 };
