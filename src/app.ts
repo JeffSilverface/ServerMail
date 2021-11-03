@@ -17,7 +17,6 @@ app.get("/", (req: Request, res: Response) => {
 });
 
 app.post("/mail", async (req: Request, res: Response) => {
-  console.log("reception ok");
   await sendMail(req.body)
     .then((ok) => {
       res.send(true);

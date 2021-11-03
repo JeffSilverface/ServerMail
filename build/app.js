@@ -54,15 +54,13 @@ app.get("/", function (req, res) {
 app.post("/mail", function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
     return __generator(this, function (_a) {
         switch (_a.label) {
-            case 0:
-                console.log("reception ok");
-                return [4 /*yield*/, (0, sendMail_1.sendMail)(req.body)
-                        .then(function (ok) {
-                        res.send(true);
-                    })
-                        .catch(function (err) {
-                        res.send(false);
-                    })];
+            case 0: return [4 /*yield*/, (0, sendMail_1.sendMail)(req.body)
+                    .then(function (ok) {
+                    res.send(true);
+                })
+                    .catch(function (err) {
+                    res.send(false);
+                })];
             case 1:
                 _a.sent();
                 res.end;
