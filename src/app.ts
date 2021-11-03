@@ -16,9 +16,9 @@ app.get("/", (req: Request, res: Response) => {
   res.sendFile(path.join(__dirname, "build", "index.html"));
 });
 
-app.post("/mail", (req: Request, res: Response) => {
+app.post("/mail", async (req: Request, res: Response) => {
   console.log("reception ok");
-  sendMail(req.body)
+  await sendMail(req.body)
     .then((ok) => {
       res.send(true);
     })
