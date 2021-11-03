@@ -43,15 +43,17 @@ var sendMail = function (values) { return __awaiter(void 0, void 0, void 0, func
     var transporter, mail, confirm;
     return __generator(this, function (_a) {
         switch (_a.label) {
-            case 0: return [4 /*yield*/, nodemailer.createTransport({
-                    host: "smtp.gmail.com",
-                    port: 587,
-                    secure: false,
-                    auth: {
-                        user: process.env.USER,
-                        pass: process.env.PASSWORD,
-                    },
-                })];
+            case 0:
+                console.log("sendmail", values);
+                return [4 /*yield*/, nodemailer.createTransport({
+                        host: "smtp.gmail.com",
+                        port: 587,
+                        secure: false,
+                        auth: {
+                            user: process.env.USER,
+                            pass: process.env.PASSWORD,
+                        },
+                    })];
             case 1:
                 transporter = _a.sent();
                 return [4 /*yield*/, transporter.sendMail({

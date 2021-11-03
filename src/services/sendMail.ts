@@ -9,6 +9,7 @@ interface FormValues {
 }
 
 export const sendMail = async (values: FormValues) => {
+  console.log("sendmail", values);
   const transporter = await nodemailer.createTransport({
     host: "smtp.gmail.com",
     port: 587,
