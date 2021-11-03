@@ -8,9 +8,11 @@ var sendMail_1 = require("./services/sendMail");
 var path = require("path");
 var app = (0, express_1.default)();
 var port = process.env.PORT || 3000;
+var cors = require("cors");
 exports.app = app;
 app.use(express_1.default.json());
 app.use(express_1.default.urlencoded({ extended: true }));
+app.use(cors());
 app.use(express_1.default.static(path.join(__dirname, "client/")));
 app.get("/", function (req, res) {
     res.sendFile(path.join(__dirname, "build", "index.html"));
