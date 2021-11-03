@@ -1,30 +1,20 @@
 import express, { Application, Request, Response } from "express";
-import cors from "cors";
 import { sendMail } from "./services/sendMail";
 
-const app: Application = express();
-const port: number = 5000;
+const path = require("path");
 
-interface FormValues {
-  Name: string;
-  Email: string;
-  Subject: string;
-  Message: string;
-}
+const app: Application = express();
+const port = process.env.PORT || 3000;
+
+exports.app = app;
 
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-const corsOptions = {
-  origin: "http://localhost:3000",
-  credentials: true,
-  optionSuccessStatus: 200,
-};
-app.use(cors(corsOptions));
-app.use(
-  express.urlencoded({
-    extended: true,
-  })
-);
+app.use(express.static(path.join(__dirname, "client/")));
+app.get("/", (req: Request, res: Response) => {
+  res.sendFile(path.join(__dirname, "build", "index.html"));
+});
 
 app.post("/mail", (req: Request, res: Response) => {
   sendMail(req.body)
