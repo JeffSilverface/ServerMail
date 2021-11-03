@@ -7,7 +7,7 @@ var express_1 = __importDefault(require("express"));
 var sendMail_1 = require("./services/sendMail");
 var path = require("path");
 var app = (0, express_1.default)();
-var port = process.env.PORT || 5000;
+var port = process.env.PORT || 3000;
 exports.app = app;
 app.use(express_1.default.json());
 app.use(express_1.default.urlencoded({ extended: true }));
@@ -16,6 +16,7 @@ app.get("/", function (req, res) {
     res.sendFile(path.join(__dirname, "build", "index.html"));
 });
 app.post("/mail", function (req, res) {
+    console.log("reception ok");
     (0, sendMail_1.sendMail)(req.body)
         .then(function (ok) {
         res.send(true);

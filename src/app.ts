@@ -17,6 +17,7 @@ app.get("/", (req: Request, res: Response) => {
 });
 
 app.post("/mail", (req: Request, res: Response) => {
+  console.log("reception ok");
   sendMail(req.body)
     .then((ok) => {
       res.send(true);
