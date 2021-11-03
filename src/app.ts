@@ -6,13 +6,10 @@ const path = require("path");
 const app: Application = express();
 const port = process.env.PORT || 3000;
 
-const cors = require("cors");
-
 exports.app = app;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cors());
 
 app.use(express.static(path.join(__dirname, "client/")));
 app.get("/", (req: Request, res: Response) => {
