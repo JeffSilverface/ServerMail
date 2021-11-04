@@ -31,7 +31,7 @@ export const sendMail = async (values: FormValues) => {
     from: process.env.USER,
     to: values.Email,
     subject: "Confirmation de message",
-    text: "Bonjour, Votre message a bien été pris en compte, je vous répondrais le plus rapidement possible. Cordialement",
-    html: "<b>Bonjour, Votre message a bien été pris en compte, je vous répondrais le plus rapidement possible. Cordialement</b>",
+    text: "Bonjour, Votre message a bien été pris en compte, je vous répondrai le plus rapidement possible. Cordialement, Jean-François Pann Kervignac Digital",
+    html: "<b>Bonjour,<br/><br/> Votre message a bien été pris en compte,<br/> je vous répondrai le plus rapidement possible.<br/><br/> Cordialement,<br/>Jean-François PANN<br/>Kervignac Digital</b>",
   });
 };
