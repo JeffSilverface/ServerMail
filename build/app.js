@@ -69,5 +69,5 @@ app.post("/mail", function (req, res) { return __awaiter(void 0, void 0, void 0,
     });
 }); });
 app.listen(port, function () {
-    console.log("connected successfully on port " + port);
+    console.log("connected successfully on port ".concat(port));
 });

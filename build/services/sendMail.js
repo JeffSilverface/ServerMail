@@ -57,9 +57,9 @@ var sendMail = function (values) { return __awaiter(void 0, void 0, void 0, func
                 return [4 /*yield*/, transporter.sendMail({
                         from: process.env.USER,
                         to: process.env.USER,
-                        subject: values.Subject + " | " + values.Name + " | " + values.Email,
+                        subject: "".concat(values.Subject, " | ").concat(values.Name, " | ").concat(values.Email),
                         text: values.Message,
-                        html: "<b>" + values.Message + "</b>",
+                        html: "<b>".concat(values.Message, "</b>"),
                     })];
             case 2:
                 _a.sent();
